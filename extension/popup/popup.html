@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoApply</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">⚡ AutoApply</div>
+    </header>
+
+    <!-- Loading state -->
+    <div id="loading" class="section">
+      <div class="spinner"></div>
+      <p>Checking status…</p>
+    </div>
+
+    <!-- Unauthenticated state -->
+    <div id="unauthenticated" class="section hidden">
+      <div class="icon">🔒</div>
+      <h2>Sign in to AutoApply</h2>
+      <p class="subtitle">Connect your account to start automating job applications.</p>
+      <a id="signin-btn" class="btn btn-primary" href="#" target="_blank">Sign In</a>
+    </div>
+
+    <!-- No subscription state -->
+    <div id="no-subscription" class="section hidden">
+      <div class="icon">⭐</div>
+      <h2>Subscription Required</h2>
+      <p class="subtitle">Upgrade your plan to start automating applications.</p>
+      <a id="upgrade-btn" class="btn btn-primary" href="#" target="_blank">View Plans</a>
+    </div>
+
+    <!-- Active state -->
+    <div id="active" class="section hidden">
+      <div class="status-badge active">● Active</div>
+      <h2 id="user-name">Ready to apply</h2>
+      <p class="subtitle" id="user-email"></p>
+
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-value" id="stat-total">–</div>
+          <div class="stat-label">Total Applied</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-today">–</div>
+          <div class="stat-label">Today</div>
+        </div>
+      </div>
+
+      <div class="platforms">
+        <div class="platform-badge linkedin">LinkedIn ✓</div>
+        <div class="platform-badge indeed">Indeed ✓</div>
+      </div>
+
+      <div class="actions">
+        <a id="dashboard-link" class="btn btn-secondary" href="#" target="_blank">Open Dashboard</a>
+        <button id="signout-btn" class="btn btn-ghost">Sign Out</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
